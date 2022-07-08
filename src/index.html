@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <title>Bootstrap 4 Layout</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/open-sans.css" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+      #body-row {
+          margin-left:0;
+          margin-right:0;
+      }
+      #sidebar-container {
+          min-height: 100vh;   
+          background-color: #333;
+          padding: 0;
+      }
+      #right-sidebar {
+          min-height: 100vh;   
+          background-color: #333;
+          width: 60px;
+          padding: 0;
+      }
+      /* Sidebar sizes when expanded and expanded */
+      .sidebar-expanded {
+          width: 220px;
+      }
+      .sidebar-collapsed {
+          width: 60px;
+      }
+      
+      /* Menu item*/
+      #sidebar-container .list-group a ,
+      #right-sidebar .list-group a{
+          height: 50px;
+          color: white;
+      }
+      
+      
+      .main-div{background:red;}
+      .main-div-expanded{background:green;}
+      .sidebar-collapsed .menu-collapsed{display:none;}
+      
+      </style>
+  </head>
+  <body>
+    <div class="d-flex flex-column flex-root app-root">
+        <div class="app-page flex-column flex-column-fluid">
+            <!--begin::Header container-->
+            <div class="app-header shadow-sm">
+                <div class="app-container container-fluid d-flex align-items-stretch justify-content-between">
+
+                    <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1">
+                        <div class="app-navbar app-left-navbar flex-shrink-0">
+                            <div class="app-navbar-item me-0 me-lg-2">
+                                <button class="app-navebar-toggler btn btn-secondary navbar-toggler-right mr-3"  id="toggleButton" type="button">
+                                    <span class="fa-solid fa-bars navbar-toggler-icon"></span>
+                                </button>  
+                            </div>
+                            <div class="app-navbar-item me-0 me-lg-2">
+                                <div class="dropdown app-quick-action">
+                                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="app-quick-action" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </a>
+                                  
+                                    <ul class="dropdown-menu" aria-labelledby="app-quick-action">
+                                      <li><a class="dropdown-item" href="#">Action</a></li>
+                                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="app-navbar-item align-items-stretch me-0 me-lg-2">1</div>
+                        </div>
+                        <div class="app-searchbar">
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon1">@</span>
+                                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <div class="app-navbar app-right-navbar flex-shrink-0">
+                            <!--Note:: Add align-items-stretch class for full vertical secssion clickable-->
+                            <div class="app-navbar-item ms-1 ms-lg-3">
+                                <div class="dropdown">
+                                    <a class="dropdown-toggle" href="#" role="button" id="app-quick-action" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside">
+                                        <i class="fa-solid fa-coins"></i>
+                                    </a>
+                                    <div class="dropdown-menu p-0 w-350px">
+                                        <div class="d-flex flex-column bgi-no-repeat rounded-top" style="background-image:url(images/pattern-1.jpg);">                                            
+                                            <h3 class="text-white fw-semibold px-4 mt-5 mb-5">Rewards 
+                                                <span class="fs-5 opacity-75 ps-3">24 reports</span>
+                                            </h3>
+                                        </div>
+                                        <div class="">
+                                            Content
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-navbar-item app-notification-dropdown ms-1 ms-lg-3">
+                                <div class="dropdown">
+                                    <a class="dropdown-toggle" href="#" role="button" id="app-quick-action" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside">
+                                        <i class="fa-solid fa-bell"></i>
+                                    </a>
+                                    <div class="dropdown-menu p-0 w-350px">
+                                        <div class="d-flex flex-column bgi-no-repeat rounded-top" style="background-image:url(images/pattern-1.jpg);">                                            
+                                            <h3 class="text-white fw-semibold px-4 mt-5 mb-5">Notifications 
+                                                <span class="fs-5 opacity-75 ps-3">24 reports</span>
+                                            </h3>
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li class="nav-item">
+                                                  <a class="nav-link active" data-bs-toggle="tab" href="#home">Home</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                  <a class="nav-link" data-bs-toggle="tab" href="#menu1">Menu 1</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                  <a class="nav-link" data-bs-toggle="tab" href="#menu2">Menu 2</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!--begin::Tab panes-->
+                                        <div class="tab-content">
+                                            <div id="home" class="container tab-pane active"><br>
+                                            <h3>HOME</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            </div>
+                                            <div id="menu1" class="container tab-pane fade"><br>
+                                            <h3>Menu 1</h3>
+                                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                            </div>
+                                            <div id="menu2" class="container tab-pane fade"><br>
+                                            <h3>Menu 2</h3>
+                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                                            </div>
+                                        </div>
+                                        <!--end::Tab panes-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-navbar-item ms-1 ms-lg-3">
+                                <div class="dropdown">
+                                    <a class="dropdown-toggle" href="#" role="button" id="app-quick-action" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                                        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                                    </a>
+                                  
+                                    <ul class="dropdown-menu" aria-labelledby="app-quick-action">
+                                      <li><a class="dropdown-item" href="#">Action</a></li>
+                                      <li><a class="dropdown-item active" href="#" aria-current="true">Another action</a></li>
+                                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--End::Header container-->
+            
+        </div>
+    </div>
+
+                                              
+
+      
+      <div class="row" id="body-row">
+
+          <!-- Sidebar -->
+          <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
+            <!-- Bootstrap List Group -->
+            <ul class="list-group">
+                
+                <a href="#" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="fa-solid fa-dashboard mr-3"></span> 
+                        <span class="menu-collapsed">Dashboard</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="fa-solid fa-user mr-3"></span>
+                        <span class="menu-collapsed">Profile</span>
+                    </div>
+                </a>
+                           
+                <a href="#" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="fa-solid fa-tasks mr-3"></span>
+                        <span class="menu-collapsed">Tasks</span>    
+                    </div>
+                </a>
+                
+                <a href="#" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="fa-solid fa-calendar mr-3"></span>
+                        <span class="menu-collapsed">Calendar</span>
+                    </div>
+                </a>
+    
+                <a href="#" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="fa-solid fa-envelope mr-3"></span>
+                        <span class="menu-collapsed">Messages <span class="badge badge-pill badge-primary ml-2">5</span></span>
+                    </div>
+                </a>
+                
+                <a href="#" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="fa-solid fa-question mr-3"></span>
+                        <span class="menu-collapsed">Help</span>
+                    </div>
+                </a>
+                
+                 
+            </ul><!-- List Group END-->
+        </div><!-- sidebar-container END -->
+      
+          <!-- MAIN -->
+          <div class="col main-div" id="main-div">
+              <h1>Welcome to My little Project</h1>
+              <div class="card">
+                  <h4 class="card-header">Requirements</h4>
+                  <div class="card-body">
+                      <ul>
+                        <li>Bootstrap 4</li>
+                      </ul>
+                  </div>
+              </div>
+          </div><!-- Main Col END -->
+          <!-- Right menu start -->
+          <div id="right-sidebar" class="sidebar-expanded d-none d-md-block">
+              <!-- Bootstrap List Group -->
+              <ul class="list-group">
+                  <a href="#" class="bg-dark list-group-item list-group-item-action">
+                      <div class="d-flex w-100 justify-content-start align-items-center">
+                          <span class="fa fa-dashboard mr-3"></span> 
+                      </div>
+                  </a>
+                  
+                  <a href="#" class="bg-dark list-group-item list-group-item-action">
+                      <div class="d-flex w-100 justify-content-start align-items-center">
+                          <span class="fa fa-user mr-3"></span>
+                      </div>
+                  </a>
+                             
+                  <a href="#" class="bg-dark list-group-item list-group-item-action">
+                      <div class="d-flex w-100 justify-content-start align-items-center">
+                          <span class="fa fa-tasks mr-3"></span>  
+                      </div>
+                  </a>
+              </ul><!-- List Group END-->
+          </div><!-- Right menu END -->
+      </div><!-- body-row END -->
+        <script>
+            let theButton = document.getElementById('toggleButton'), sideMenu = document.querySelectorAll('.sidebar-expanded'), mainContainer = document.querySelectorAll('.main-div');
+    
+            theButton.onclick = function () { 
+            for(let x of sideMenu) {
+                x.classList.toggle('sidebar-collapsed');
+            }
+            for(let y of mainContainer) {
+                y.classList.toggle('main-div-expanded');
+            }
+            };
+        </script>
+        <!-- <script src="js/jquery.min.js"></script> -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/perfect-scrollbar.min.js"></script>
+        <script src="js/custom.js"></script>
+  </body>
+</html>
+ 

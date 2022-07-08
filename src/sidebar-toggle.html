@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <title>Bootstrap 4 Layout</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/open-sans.css" />
+    <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+      #body-row {
+          margin-left:0;
+          margin-right:0;
+      }
+      #sidebar-container {
+          min-height: 100vh;   
+          background-color: #333;
+          padding: 0;
+      }
+      #right-sidebar {
+          min-height: 100vh;   
+          background-color: #333;
+          width: 60px;
+          padding: 0;
+      }
+      /* Sidebar sizes when expanded and expanded */
+      .sidebar-expanded {
+          width: 220px;
+      }
+      .sidebar-collapsed {
+          width: 60px;
+      }
+      
+      /* Menu item*/
+      #sidebar-container .list-group a ,
+      #right-sidebar .list-group a{
+          height: 50px;
+          color: white;
+      }
+      
+      
+      .main-div{background:red;}
+      .main-div-expanded{background:green;}
+      .sidebar-collapsed .menu-collapsed{display:none;}
+      
+      </style>
+  </head>
+  <body>
+      <!-- Bootstrap NavBar -->
+      <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
+        <button class="bg-dark navbar-toggler-right mr-3"  id="toggleButton" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>  
+      </nav>
+      
+      <div class="row" id="body-row">
+          <!-- Sidebar -->
+          <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
+              <!-- Bootstrap List Group -->
+              <ul class="list-group">
+                  
+                  <a href="#" class="bg-dark list-group-item list-group-item-action">
+                      <div class="d-flex w-100 justify-content-start align-items-center">
+                          <span class="fa fa-dashboard fa-fw mr-3"></span> 
+                          <span class="menu-collapsed">Dashboard</span>
+                      </div>
+                  </a>
+                  
+                  <a href="#" class="bg-dark list-group-item list-group-item-action">
+                      <div class="d-flex w-100 justify-content-start align-items-center">
+                          <span class="fa fa-user fa-fw mr-3"></span>
+                          <span class="menu-collapsed">Profile</span>
+                      </div>
+                  </a>
+                             
+                  <a href="#" class="bg-dark list-group-item list-group-item-action">
+                      <div class="d-flex w-100 justify-content-start align-items-center">
+                          <span class="fa fa-tasks fa-fw mr-3"></span>
+                          <span class="menu-collapsed">Tasks</span>    
+                      </div>
+                  </a>
+                  
+                  <a href="#" class="bg-dark list-group-item list-group-item-action">
+                      <div class="d-flex w-100 justify-content-start align-items-center">
+                          <span class="fa fa-calendar fa-fw mr-3"></span>
+                          <span class="menu-collapsed">Calendar</span>
+                      </div>
+                  </a>
+      
+                  <a href="#" class="bg-dark list-group-item list-group-item-action">
+                      <div class="d-flex w-100 justify-content-start align-items-center">
+                          <span class="fa fa-envelope-o fa-fw mr-3"></span>
+                          <span class="menu-collapsed">Messages <span class="badge badge-pill badge-primary ml-2">5</span></span>
+                      </div>
+                  </a>
+                  
+                  <a href="#" class="bg-dark list-group-item list-group-item-action">
+                      <div class="d-flex w-100 justify-content-start align-items-center">
+                          <span class="fa fa-question fa-fw mr-3"></span>
+                          <span class="menu-collapsed">Help</span>
+                      </div>
+                  </a>
+                  
+                   
+              </ul><!-- List Group END-->
+          </div><!-- sidebar-container END -->
+      
+          <!-- MAIN -->
+          <div class="col main-div" id="main-div">
+              <h1>Welcome to My little Project</h1>
+              <div class="card">
+                  <h4 class="card-header">Requirements</h4>
+                  <div class="card-body">
+                      <ul>
+                        <li>Bootstrap 4</li>
+                      </ul>
+                  </div>
+              </div>
+          </div><!-- Main Col END -->
+          <!-- Right menu start -->
+          <div id="right-sidebar" class="sidebar-expanded d-none d-md-block">
+              <!-- Bootstrap List Group -->
+              <ul class="list-group">
+                  <a href="#" class="bg-dark list-group-item list-group-item-action">
+                      <div class="d-flex w-100 justify-content-start align-items-center">
+                          <span class="fa fa-dashboard fa-fw mr-3"></span> 
+                      </div>
+                  </a>
+                  
+                  <a href="#" class="bg-dark list-group-item list-group-item-action">
+                      <div class="d-flex w-100 justify-content-start align-items-center">
+                          <span class="fa fa-user fa-fw mr-3"></span>
+                      </div>
+                  </a>
+                             
+                  <a href="#" class="bg-dark list-group-item list-group-item-action">
+                      <div class="d-flex w-100 justify-content-start align-items-center">
+                          <span class="fa fa-tasks fa-fw mr-3"></span>  
+                      </div>
+                  </a>
+              </ul><!-- List Group END-->
+          </div><!-- Right menu END -->
+      </div><!-- body-row END -->
+      <script>
+        let theButton = document.getElementById('toggleButton'), sideMenu = document.querySelectorAll('.sidebar-expanded'), mainContainer = document.querySelectorAll('.main-div');
+  
+        theButton.onclick = function () { 
+          for(let x of sideMenu) {
+            x.classList.toggle('sidebar-collapsed');
+           }
+          for(let y of mainContainer) {
+            y.classList.toggle('main-div-expanded');
+           }
+        };
+      </script>
+  </body>
+</html>
+ 

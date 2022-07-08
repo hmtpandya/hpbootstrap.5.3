@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <title>Bootstrap 4 Layout</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/open-sans.css" />
+    <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <div class="container-fluid px-5 py-5">
+        Hello This Bootstrap 4.3.1
+    </div>
+
+    <div class="container-fluid px-5 py-5">
+        <select class="selectpicker">
+            <option>Mustard</option>
+            <option>Ketchup</option>
+            <option>Barbecue</option>
+        </select>
+    </div>
+    <div class="container-fluid px-5 py-5">
+        <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="auto"
+            title="Tooltip Auto Placement">
+            Tooltip Auto Placement
+        </button>
+        <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
+            title="Tooltip on top">
+            Tooltip on top
+        </button>
+        <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right"
+            title="Tooltip on right">
+            Tooltip on right
+        </button>
+        <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"
+            title="Tooltip on bottom">
+            Tooltip on bottom
+        </button>
+        <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left"
+            title="Tooltip on left">
+            Tooltip on left
+        </button>
+
+
+        <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-html="true"
+            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+            Tooltip with HTML
+        </button>
+
+        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Disabled tooltip">
+            <button class="btn btn-primary" style="pointer-events: none;" type="button" disabled>Disabled
+                button</button>
+        </span>
+
+      
+    </div>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

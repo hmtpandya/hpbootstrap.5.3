@@ -1,0 +1,174 @@
+// Font Family
+$font-family-sans-serif:  'Open Sans' ,   -apple-system, BlinkMacSystemFont  !default;
+
+// Bootstrap and its default variables
+@import '../plugin/bootstrap/scss/bootstrap.scss';
+
+// Boostrap Variable Overrides 
+$font-size-13:                $font-size-base * .8125 !default;
+
+$h1-font-size:                $font-size-base * 1.75 !default;
+$h2-font-size:                $font-size-base * 1.5 !default;
+$h3-font-size:                $font-size-base * 1.35 !default;
+$h4-font-size:                $font-size-base * 1.25 !default;
+$h5-font-size:                $font-size-base * 1.15 !default;
+$h6-font-size:                $font-size-base !default;
+
+
+// Coursplay Variable & css changes
+$courseplay-primary: #1b98e0;
+$courseplay-secondary: #fcaf18;
+$label_color:#7C7C7C;
+
+
+
+
+// Custom Css begin
+// Width classes
+.w-350px{width: 350px !important;}
+
+
+.bgi-no-repeat{
+  background-repeat: no-repeat;
+}
+
+label{
+  font-size: $font-size-13;
+  color: $label_color;
+  line-height: $line-height-base * 1.0770;
+  font-weight: $font-weight-normal;
+}
+
+// Radio begin
+.cp-radio {
+  display: inline-block;
+  position: relative;
+  padding-left: 30px;
+  text-align: left;
+  margin-bottom: 10px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+    &.cp-radio--disabled {
+      opacity: 0.8;
+      cursor: not-allowed;
+    }
+    > input {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+    }    
+    > input:checked ~ span:after {
+      display: block;
+    }
+    > span {
+      background: none;
+      position: absolute;
+      top: 1px;
+      left: 0;
+      height: 18px;
+      width: 18px;
+      border-radius: 50%;
+      border: 1px solid #d1d7e2;
+    }
+    > span:after {
+      content: '';
+      position: absolute;
+      display: none;
+      top: 50%;
+      left: 50%;
+      margin-left: -3px;
+      margin-top: -3px;
+      width: 6px;
+      height: 6px;
+      border-radius: 100%;
+      border: solid #bfc7d7;
+      background: #bfc7d7;
+    }
+}
+.cp-radio-list .cp-radio {
+  display: block;
+  text-align: left;
+}
+.cp-radio-inline .cp-radio {
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 5px;
+}
+
+
+// header css begin
+.app-header {
+  transition: none;
+  display: flex;
+  align-items: stretch;
+  height: 70px;
+  z-index: 9999;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  background: #ccc;
+  padding: 8px 0;
+
+    .app-container{
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+    }
+}
+
+// searchbar css begin
+.app-searchbar {
+  max-width: 30%;
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+}
+
+// nav css begin
+.app-navbar {
+  display: flex;
+  align-items: stretch;
+
+  .app-navbar-item {
+    display: flex;
+    align-items: center;
+    
+    .app-navebar-toggler {
+      .navbar-toggler-icon{
+        background-image: none;
+        color: $white;    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1em;
+        height: 1.2em;
+        font-size: 20px;
+      }
+    }
+
+    // .app-quick-action{
+      // &
+      .dropdown{
+        .dropdown-toggle{
+          i{}
+          &::after{
+            display:none;
+          }
+        }
+      }
+    // }
+    
+
+  }
+}
+
+
+
+
+
+
+
+
